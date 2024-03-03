@@ -19,7 +19,7 @@ TopicTrans=['Train','Car','Airplane']
 # length of the simulated document 
 n = 10000;
 
-# dirictlet parameters 
+# Dirichtlet parameters 
 alpha =  pd.DataFrame([[1, 1, 1],[10, 10, 10],[2,5,15]], columns=['col1','col2','col3'], index=['alpha1','alpha2','alpha3'])# control document via topic
 beta =  pd.DataFrame([[1, 1, 1],[10, 10, 10],[2,5,15]], columns=['col1','col2','col3'], index=['beta1','beta2','beta3'])# control document via topic
 

@@ -63,7 +63,7 @@ from scipy.stats import wasserstein_distance
 
 # Plotting tools
 import pyLDAvis
-import pyLDAvis.gensim  # don't skip this
+import pyLDAvis.gensim_models as gensimvis  # don't skip this
 import matplotlib.pyplot as plt
 #matplotlib inline
 
@@ -327,7 +327,7 @@ except Exception:
     plot_difference = plot_difference_matplotlib
 else:
     py.init_notebook_mode()
-    plot_difference = plot_difference_plotly
+    plot_difference = plot_difference_matplotlib
     
 mdiff, annotation = lda_model.diff(lda_model, distance='hellinger', num_words=50)
 plot_difference(mdiff,  annotation=annotation)
@@ -342,6 +342,6 @@ plt.savefig("topic_distance_H.png",dpi = 360,transparent=True)
 ##########################################################
 
 pyLDAvis.enable_notebook()
-vis = pyLDAvis.gensim.prepare(lda_model, corpus, id2word)
+vis = pyLDAvis.gensim_models.prepare(lda_model, corpus, id2word)
 pyLDAvis.show(vis)
 ##########################################################

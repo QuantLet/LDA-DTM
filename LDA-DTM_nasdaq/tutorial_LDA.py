@@ -26,7 +26,7 @@ import spacy
 
 # Plotting tools
 import pyLDAvis
-import pyLDAvis.gensim  # don't skip this
+import pyLDAvis.gensim_models as gensimvis # don't skip this
 import matplotlib.pyplot as plt
 #matplotlib inline
 
@@ -176,6 +176,6 @@ print('\nCoherence Score: ', coherence_lda)
 
 # Visualize the topics
 pyLDAvis.enable_notebook()
-vis = pyLDAvis.gensim.prepare(lda_model, corpus, id2word)
+vis = pyLDAvis.gensim_models.prepare(lda_model, corpus, id2word)
 vis
 
